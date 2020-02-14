@@ -135,24 +135,22 @@ point : 670
     ```c++
     // 0x55555555d7f0
     char* sub_97f0(char *userInput, char *seedStr) {
-    char *ret = 0;
+        char *ret = 0;
 
-    for (int k=0; userInput[k] != 0; k+=16) {
-        char tmp[48];
-        char result[32];
-        memset(tmp,0,sizeof(tmp));
-        memcpy(tmp,&userInput[k],16); // Copy file content by 16 bytes.
-
-        for (int i=0; i<16; i++) {
-            for (int j=0; j<32; j++) {
-                tmp[i+j+1] ^= oneByteEncode(seedStr[j], tmp[i]);
-            }
+        for (int k=0; userInput[k] != 0; k+=16) {
+            char tmp[48];
+            char result[32];
+            memset(tmp,0,sizeof(tmp));
+            memcpy(tmp,&userInput[k],16); // Copy file content by 16 bytes.
+            
+            for (int i=0; i<16; i++)
+                for (int j=0; j<32; j++)
+                    tmp[i+j+1] ^= oneByteEncode(seedStr[j], tmp[i]);
+            
+            memcpy(result, &tmp[16], 32); // Throw away the first 16 bytes 
+            concat(ret,result);
         }
-
-        memcpy(result, &tmp[16], 32); // Throw away the first 16 bytes 
-        concat(ret,result);
-    }
-    return ret;
+        return ret;
     }
     ```
 
