@@ -29,7 +29,7 @@ point : 670
   * ![1](./1.png?raw=true)
     * Needed [`flag`]() file.
   * ![2](./2.png?raw=true)
-    * `rs` binary prints hex values.
+    * [`rs`]() binary prints hex values.
   * ![3](./3.png?raw=true)
     * We should find the original string to output as [`result`]() file.
     * output: 128 byte hex values.
