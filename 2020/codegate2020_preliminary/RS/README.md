@@ -111,8 +111,8 @@ point : 670
 
         while (uVar) {
             if ((uVar & 1) == 1) ret ^= sVar; // XOR
-            uVar = (short) uVar >> 1; // 2로 나눔
-            sVar *= 2; // 2배 곱함
+            uVar = (short) uVar >> 1;
+            sVar *= 2;
             if (sVar >= 0x100) sVar ^= 0x11d; // XOR
         }
         return ret;
@@ -159,7 +159,7 @@ point : 670
 * Lastly, create algorithm for decoding!
   * Basic: [`result`]() file shows 128 bytes hex values. Now we know there's the data of 32 bytes per 16 bytes of file content after encoding. If calculating, [`128 / 32 = 4`](), so it means from 16 bytes of file content was [`copied 4 times`](). In other words, length of file content will be 64 (= 16*4).
   
-  * Method: Think the other way round.
+  * Method: Think the other way.
 
     ```python
     Seed = [
@@ -191,8 +191,8 @@ point : 670
   * Prove of Concept:
 
     ```text
-    예제) ABCDEFGH
-    출력) 91 21 70 be 6c 27 f6 aa ff 00 a2 47 a4 f6 db 24 10 43 6b a2 46 a5 ef 09 08 c8 ff b2 8d b8 58 a3
+    Input) ABCDEFGH
+    Output) 91 21 70 be 6c 27 f6 aa ff 00 a2 47 a4 f6 db 24 10 43 6b a2 46 a5 ef 09 08 c8 ff b2 8d b8 58 a3
 
     23 d7 6d ea 5a d8 7a 41   1a 6a 4c 0f 00 07 c4 23
     d1 4b bf ea d4 c2 ef ed   9c e9 cb ff d9 df 7d 2d
