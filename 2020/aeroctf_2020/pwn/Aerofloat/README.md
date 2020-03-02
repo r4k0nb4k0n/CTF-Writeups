@@ -1,4 +1,4 @@
-# [Drawings on the walls]
+# [Aerofloat]
 
 ## Summary
 
@@ -17,16 +17,16 @@
 
 * pwndbg
 * ghidra
-* [one gadget]('./https://github.com/david942j/one_gadget')
+* [one gadget](https://github.com/david942j/one_gadget)
 
 ## Description
 
 * Basic analysis
-	* ![1]('1.png?raw=true')
+	* ![1](./1.png?raw=true)
 	* soso :)
 
 * There's 3 options.
-	* ![2]('2.png?raw=true')
+	* ![2](./2.png?raw=true)
 		* First option calls the following functions.
 			* [`read(0, &ticket_id[i], 8)`]()
 			* [`scanf('%lf', &rating[i])`]()
@@ -35,13 +35,13 @@
 	* _But, notice that this binary shows `memory leak` when ticket id is 8 bytes._
 
 * Not checked bound of arrays saving ticket id and rating.
-	* ![3]('3.png?raw=true') // source code
+	* ![3](./3.png?raw=true) // source code
 		* It's possible to keep entering.
 		* arrays is local variable.
 	* [`Stack Overflow`]
 
 * Debugging
-	* ![4]('4.png?raw=true')
+	* ![4](./4.png?raw=true)
 		* `red box` is libc address.
 			* offset = 0x60 = 0x10 * 6
 			* Enter dummy 6 times.
@@ -56,11 +56,11 @@
 
 * Exploit
 	* used one shot gadget.
-		* ![5]('5.png?raw=true')
+		* ![5](./5.png?raw=true)
 	* needed some utility function
 	```python
 	hex to double
 	double to hex
 	```
-	* [script]('./ex.py')
-	* ![6]('6.png?raw=true)
+	* [`script`](./ex.py)
+	* ![6](./6.png?raw=true)
