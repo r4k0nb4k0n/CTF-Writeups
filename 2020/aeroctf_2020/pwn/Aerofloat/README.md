@@ -21,10 +21,6 @@
 
 ## Description
 
-* Basic analysis
-	* ![1](./1.png?raw=true)
-	* soso :)
-
 * There's 3 options.
 	* ![2](./2.png?raw=true)
 		* First option calls the following functions.
