@@ -55,8 +55,11 @@
 		* ![5](./5.png?raw=true)
 	* needed some utility function
 	```python
-	hex to double
-	double to hex
+	def double_to_hex(f):
+    		return hex(struct.unpack('<Q', struct.pack('<d', f))[0])
+
+	def hex_to_double(h):
+    		return struct.unpack('d', h)[0]
 	```
 	* [`script`](./ex.py)
 	* ![6](./6.png?raw=true)
