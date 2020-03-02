@@ -28,7 +28,7 @@
 			* [`scanf('%lf', &rating[i])`]()
 		* Second option, it's just listing.
 		* Third option just prints user name.
-	* _But, notice that this binary shows `memory leak` when ticket id is 8 bytes._
+	* **But, notice that this binary shows `memory leak` when ticket id is 8 bytes.**
 
 * Not checked bound of arrays saving ticket id and rating.
 	* ![3](./3.png?raw=true) // source code
