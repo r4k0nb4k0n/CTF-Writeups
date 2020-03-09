@@ -20,7 +20,7 @@ point : 670
 
 ## Tools
 
-* pwngdb
+* pwndbg
 * ghidra
 
 ## Description
@@ -188,7 +188,7 @@ point : 670
         return data[:16]
     ```
 
-  * Prove of Concept:
+  * Proof of Concept:
 
     ```text
     Input) ABCDEFGH
