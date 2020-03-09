@@ -20,7 +20,7 @@ point : 670
 
 ## Tools
 
-* pwngdb
+* pwndbg
 * ghidra
 
 ## Description
