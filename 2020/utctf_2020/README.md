@@ -14,6 +14,10 @@
 
 ## Write-up
 
+* Binary Exploitation
+  * [bof](./Binary_Exploitation/bof)
+  * [Cancelled](./Binary_Exploitation/Cancelled)
+  * [zurk](./Binary_Exploitation/zurk)
 * Cryptography
   * [[basics] crypto](./Cryptography/[basics]_crypto)
   * [Random ECB](./Cryptography/Random_ECB)
@@ -33,7 +37,3 @@
   * [Crack the Heart](./Reverse_Engineering/Crack_the_Heart)
 * Web
   * [Shrek Fans Only](./Web/Shrek_Fans_Only)
-* Binary Exploitation
-  * [bof](./Binary_Exploitation/bof)
-  * [Cancelled](./Binary_Exploitation/Cancelled)
-  * [zurk](./Binary_Exploitation/zurk)
