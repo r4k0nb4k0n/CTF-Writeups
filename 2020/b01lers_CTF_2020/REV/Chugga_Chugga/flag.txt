@@ -1,0 +1,20 @@
+0123456789ABCDEF0123456
+pctf{s4d_chugg4_n01zez}
+input[17] + input[11] - input[5] - input[18] = input[18] - input[17]
+2*input[17] + input[11] = 2*input[18] + input[5]
+input[17] + input[11] = 165
+input[5] = 's' = 115
+input[17] + 165 = 2*input[18] + 115
+input[17] + 50 = 2*input[18]
+input[6] - input[17] = 4 * input[18] - 4 * input[17] = 52 - 48 = 4
+52 = 4 * input[18] - 3 * input[17]
+100 = 4 * input[18] - 2 * input[17]
+
+input[11] = 'u'
+input[17] = 48 = '0'
+input[18] = 49 = '1'
+
+input_10_ = input[0xA], input_13_ + 1 != input_10_)
+v26 = 23, input_7_ = v24, 'h' == input_10_
+input[10] = 'h'
+input[20] = 'e'
