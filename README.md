@@ -6,6 +6,7 @@
 * [Aero CTF 2020](./2020/aeroctf_2020)
 * [UTCTF 2020](./2020/utctf_2020)
 * [b01lers CTF 2020](./2020/b01lers_CTF_2020)
+* [Volga CTF 2020 Qualifier](./2020/volgactf_2020_qualifier)
 
 ## 2019
 
