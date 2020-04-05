@@ -18,3 +18,5 @@
   * [Notepad--](./pwn/Notepad--)
 * crypto
   * [Noname](./crypto/Noname)
+* forensic
+  * [Script kiddie](./forensic/Script%20kiddie)
