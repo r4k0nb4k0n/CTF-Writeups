@@ -1,0 +1,18 @@
+fmtme
+
+other_buf = 0x4040a0
+
+취약점)
+	read(0,buf,0x100);
+	snprintf(other_buf, 0x100, buf);
+
+
+main = 0x4011f7 = 4198903
+system got = 0x404028
+
+1. snprintf 에서 fsb 는 4번째 값부터 $rsp 즉 스택 주소가 된다.
+	rcx, r8, r9, rsp, rsp+8, ...
+2. other_buf 에 출력 결과가 저장된다.
+	- %p 의 결과가 저장됨
+
+	refer: https://m.blog.naver.com/PostView.nhn?blogId=tkdldjs35&logNo=220625332009&proxyReferer=https:%2F%2Fwww.google.com%2F
