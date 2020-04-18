@@ -17,3 +17,7 @@
 * pwn
   * [fmt-me](./pwn/fmt-me/)
   * [write](./pwn/write/)
+* misc
+  * [string.equals integer](./misc/string.equals_integer)
+* reverse
+  * [autobot](./reverse/autobot)
