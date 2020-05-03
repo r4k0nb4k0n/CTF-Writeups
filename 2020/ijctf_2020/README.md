@@ -16,3 +16,7 @@
 
 * misc
   * [Welcome](./misc/Welcome)
+* pwn
+  * [Admin](./pwn/admin)
+  * [Input Checker](./pwn/input_checker)
+  * [Babyheap](./pwn/babyheap)
