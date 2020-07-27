@@ -1,0 +1,137 @@
+
+<!-- saved from url=(0027)http://109.233.57.94:54040/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <title>captcha hunt</title>
+        <style>
+            body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                overflow: hidden;
+                background: white;
+                margin: 0px;
+            }
+            #main {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                /*background: linear-gradient(to bottom, #2fd3cb, #b59bff);*/
+                background: #2fd3cb;
+                height: calc(100% - 30px);
+                width: calc(100% - 30px);
+            }
+            #status {
+                font: 10vw monospace;
+                font-weight: bold;
+                color: white;
+            }
+            .captcha {
+                position: absolute;
+            }
+            h1 {
+                position: absolute;
+                font: 20px monospace;
+                color: white;
+                left: 20px;
+                top: 20px;
+                margin: 0;
+                padding: 0;
+            }
+            .link {
+                position: absolute;
+                font: 20px monospace;
+                color: white;
+            }
+            #more {
+                right: 20px;
+                top: 20px;
+            }
+            #follow {
+                right: 20px;
+                bottom: 20px;
+            }
+        </style>
+        <script type="text/javascript" async="" src="./captcha hunt_files/recaptcha__ko.js.&#45796;&#50868;&#47196;&#46300;"></script><script src="./captcha hunt_files/api.js.&#45796;&#50868;&#47196;&#46300;"></script>
+        <script type="text/javascript">
+            let count = 0;
+            let kills = 0;
+            const total = 5;
+            let statusBox;
+            let responses = "";
+
+            function updateStatus() {
+                statusBox.innerHTML = kills +' / '+ count;
+                document.getElementById('g-recaptcha-response').value = responses;
+
+                if (count == total && kills == total) {
+                    document.getElementById('form').submit();
+                }
+            }
+
+            function good(r) {
+                kills ++;
+                responses += "|" + r;
+                updateStatus();
+            }
+
+            var onloadCallback = function() {console.log('load')};
+
+            function addCaptcha() {
+                const captchaBox = document.createElement('div');
+                const widgetId = grecaptcha.render(captchaBox, {
+                    'sitekey' : '6Ld0sCEUAAAAAKu8flcnUdVb67kCEI_HYKSwXGHN',
+                    'theme' : 'light',
+                    'callback': 'good',
+                });
+
+                captchaBox.className = 'captcha';
+                document.body.appendChild(captchaBox);
+
+                count ++;
+                updateStatus();
+
+                let dividerA = (Math.random() * 250) + 250;
+                let dividerB = (Math.random() * 250) + 250;
+                let dividerC = (Math.random() * 25) + 25;
+
+                function loop() {
+                    const height = window.innerHeight - captchaBox.offsetHeight;
+                    captchaBox.style.top = Math.sin(Date.now()/dividerA) * (height/2) + (height/2);
+
+                    const width = window.innerWidth - captchaBox.offsetWidth;
+                    captchaBox.style.left = Math.sin(Date.now()/dividerB) * (width/2) + (width/2);
+
+                    captchaBox.style.transform = `rotate(${Math.sin(Date.now()/dividerC) * 10}deg)`;
+
+                }
+                loop();
+            }
+
+            function addNext() {
+                addCaptcha();
+                updateStatus();
+
+                if (count < total) {
+                    setTimeout(addNext, 500);
+                }
+            }
+
+            window.addEventListener('load', () => {
+                statusBox = document.getElementById('status');
+                addNext();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="status">0 / 5</div>
+            <form id="form" method="GET" action="http://109.233.57.94:54040/getprize.php"><input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" value=""><input type="submit" value="Get Flag" style="font-size: 50px; background: transparent; border: 4px solid white; border-radius: 20px; color: white; padding: 20px 60px"></form>
+        </div>
+        <h1>captcha hunt v1</h1>
+        <a href="https://matthewrayfield.com/" class="link" id="more">more goodies</a>
+        <a href="https://twitter.com/matthewrayfield" class="link" id="follow">@matthewrayfield</a>
+    
+
+<div class="captcha" style="top: 580.47px; left: 403.133px; transform: rotate(-6.46765deg);"><div style="width: 304px; height: 78px;"><div><iframe src="./captcha hunt_files/anchor.html" width="304" height="78" role="presentation" name="a-240bnwqa12k" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;" src="./captcha hunt_files/saved_resource(5).html"></iframe></div><div class="captcha" style="top: 223.37px; left: 460.993px; transform: rotate(-9.07746deg);"><div style="width: 304px; height: 78px;"><div><iframe src="./captcha hunt_files/anchor(1).html" width="304" height="78" role="presentation" name="a-xd0vsfnnjpxr" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response-1" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div><div class="captcha" style="top: 269.519px; left: 288.765px; transform: rotate(-9.95762deg);"><div style="width: 304px; height: 78px;"><div><iframe src="./captcha hunt_files/anchor(2).html" width="304" height="78" role="presentation" name="a-ibhttigkd3s8" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response-2" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./captcha hunt_files/bframe.html" name="c-240bnwqa12k" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div class="captcha" style="top: 78.0991px; left: 196.663px; transform: rotate(8.17717deg);"><div style="width: 304px; height: 78px;"><div><iframe src="./captcha hunt_files/anchor(3).html" width="304" height="78" role="presentation" name="a-sejepu6a88uo" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response-3" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div><div class="captcha" style="top: 468.12px; left: 563.253px; transform: rotate(-2.00876deg);"><div style="width: 304px; height: 78px;"><div><iframe src="./captcha hunt_files/anchor(4).html" width="304" height="78" role="presentation" name="a-hpq8oceo93kp" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response-4" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./captcha hunt_files/bframe(1).html" name="c-xd0vsfnnjpxr" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./captcha hunt_files/bframe(2).html" name="c-ibhttigkd3s8" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./captcha hunt_files/bframe(3).html" name="c-sejepu6a88uo" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div><div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(204, 204, 204); box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 3px; position: absolute; transition: visibility 0s linear 0.3s, opacity 0.3s linear 0s; opacity: 0; visibility: hidden; z-index: 2000000000; left: 0px; top: -10000px;"><div style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 2000000000; background-color: rgb(255, 255, 255); opacity: 0.05;"></div><div class="g-recaptcha-bubble-arrow" style="border: 11px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -11px; z-index: 2000000000;"></div><div class="g-recaptcha-bubble-arrow" style="border: 10px solid transparent; width: 0px; height: 0px; position: absolute; pointer-events: none; margin-top: -10px; z-index: 2000000000;"></div><div style="z-index: 2000000000; position: relative;"><iframe title="recaptcha challenge" src="./captcha hunt_files/bframe(4).html" name="c-hpq8oceo93kp" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox" style="width: 100%; height: 100%;"></iframe></div></div></body></html>
