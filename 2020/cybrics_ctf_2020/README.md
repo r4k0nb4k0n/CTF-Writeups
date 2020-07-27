@@ -19,4 +19,4 @@
 * Reverse
   * [Baby Rev](./Reverse/babyrev)
 * Web
-  * [Hunt] (./Web/hunt)
+  * [Hunt](./Web/hunt)
